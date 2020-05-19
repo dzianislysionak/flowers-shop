@@ -1,0 +1,29 @@
+.top {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+
+  .top-element {
+    width: 150px;
+    cursor: pointer;
+    text-decoration: underline;
+
+    &:first-child {
+      margin-left: 20px;
+    }
+
+    &:last-child {
+      margin-left: auto;
+      margin-right: 20px;
+      width: auto;
+    }
+
+    &:hover {
+      color: #e3e1da;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.basket {
+  display: flex;
+  justify-content: space-around;
+  border: 0.5px solid #aba698;
+  border-radius: 4px;
+  align-items: center;
+  box-shadow: 3px 3px 5px;
+
+  .bin {
+    margin-left: 5px;
+  }
+
+  .product-and-cost {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 10px;
+  }
+}
