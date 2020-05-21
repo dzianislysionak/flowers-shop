@@ -1,0 +1,39 @@
+.shop-item {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  min-width: 200px;
+  width: 25vw;
+  border: 1px solid #aba698;
+  border-radius: 5px;
+
+  .image {
+    height: 80%;
+    background-size: cover;
+    background-position: center;
+    margin: 15px 15px 0px 15px;
+  }
+
+  h2 {
+    margin: 0 auto;
+  }
+
+  .price-and-order {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 15px 5px 0;
+
+    .price {
+      color: #36b41a;
+      font-weight: bold;
+    }
+
+    .order {
+      background: linear-gradient(to right, rgb(255, 0, 6), rgb(254, 248, 1));
+      border-radius: 8px;
+      padding: 0 20px;
+
+      font-weight: 700;
+    }
+  }
+}

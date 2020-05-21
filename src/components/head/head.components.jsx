@@ -1,13 +1,18 @@
 import React from "react";
-import "./head.styles.scss";
+
+import { Link } from "react-router-dom";
 
 import { ReactComponent as Flower } from "../../assets/flower.svg";
 import Basket from "../basket/basket.component";
 
+import "./head.styles.scss";
+
 const Head = () => (
   <div className="head">
     <div className="logo">
-      <Flower />
+      <Link to="/">
+        <Flower />
+      </Link>
       <div className="info">
         <h1 className="sub-info">Flower-Shop</h1>
         <h4 className="sub-info">магазин цветов и плдарков</h4>

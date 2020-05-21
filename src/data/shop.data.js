@@ -70,7 +70,7 @@ const SHOP_DATA = [
     title: "Орхидеи",
     categoryRoutName: "orchid",
     categoryUrl:
-      "https://lh3.googleusercontent.com/proxy/mf6HYmYMzHapcJlYPDpwIeOhm0RA98qbptGgorKd9WKjnPnZi-GtAi3h-J4ztpY59NuVSaBEjOK_j0MXELjZRsRQ9V-R2_tgRxDTDzZO3yIeDLASkNi0BYk_ZzgEibcuv5utmnTdyoWjZbRqoaM_gjP11WXzwDC4ercLRBPX8MYrQRY_IA",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRvX8rY5Vevsm_xCVe2jlsFs7g6qiSkDRzB0wCv8tdY-Yh_bNRN&usqp=CAU",
     items: [
       {
         id: 11,
