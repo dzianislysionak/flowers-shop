@@ -1,5 +1,7 @@
+import { ShopActionTypes } from "./shop.types";
+
 const INITIAL_STATE = {
-  cllections: [
+  collections: [
     {
       id: 1,
       title: "Букеты",
@@ -36,10 +38,17 @@ const INITIAL_STATE = {
         "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Geschenke-2007.JPG/1200px-Geschenke-2007.JPG",
     },
   ],
+
+  itemm: { title: "Коллекция магазина" },
 };
 
 const shopReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case ShopActionTypes.SET_COLLECTION:
+      return {
+        ...state,
+        itemm: action.payload,
+      };
     default:
       return state;
   }
