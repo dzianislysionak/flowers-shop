@@ -1,11 +1,12 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import { ReactComponent as Bin } from "../../assets/bin.svg";
-
+import { toggleCartHidden } from "../../redux/cart/cart.actions";
 import "./basket.styles.scss";
 
-const Basket = () => (
-  <div className="basket">
+const Basket = ({ toggleCartHidden }) => (
+  <div className="basket" onClick={toggleCartHidden}>
     <div className="bin">
       <Bin />
     </div>
@@ -16,4 +17,8 @@ const Basket = () => (
   </div>
 );
 
-export default Basket;
+const mapDispatchToProps = (dispatch) => ({
+  toggleCartHidden: () => dispatch(toggleCartHidden()),
+});
+
+export default connect(null, mapDispatchToProps)(Basket);

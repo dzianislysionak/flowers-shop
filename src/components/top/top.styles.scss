@@ -27,4 +27,8 @@
       text-decoration: none;
     }
   }
+
+  &.green {
+    color: green($color: #000000);
+  }
 }

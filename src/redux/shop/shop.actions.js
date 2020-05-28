@@ -1,4 +1,6 @@
-export const setCollection = (shop) => ({
-  type: "SET_COLLECTION",
-  payload: shop,
+import { ShopActionTypes } from "./shop.types";
+
+export const setCollection = (itemm) => ({
+  type: ShopActionTypes.SET_COLLECTION,
+  payload: itemm,
 });
