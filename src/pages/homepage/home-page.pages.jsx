@@ -24,7 +24,7 @@ class HomePage extends React.Component {
       console.log("loading ");
     } else {
       const a = typeof collect;
-      console.log("a=", a, "b=", collect.coll);
+      console.log("a=", a, "b=", collect);
     }
 
     return <ShopItem />;
