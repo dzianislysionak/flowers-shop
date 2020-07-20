@@ -9,7 +9,7 @@ export const selectColl = createSelector(
 
 export const selectCollect = createSelector(
   [selectColl],
-  (selectColl) => selectColl.colll
+  (selectColl) => selectColl.coll
 );
 
 export const selectIsFetching = createSelector(

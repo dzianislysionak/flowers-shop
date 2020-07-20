@@ -20,6 +20,8 @@ export const fetchCollStartAsync = () => {
 
     fetch("http://localhost:3000/shop")
       .then((res) => res.json())
+      .then((collll) => collll.col[0].collections)
+      // .then((a) => a
       .then((data) => dispatch(fetchCollSuccess(data)))
       .catch((errorMessage) => dispatch(fetchCollFailure(errorMessage)));
   };

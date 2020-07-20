@@ -2,7 +2,7 @@ import ProduktActionTypes from "./produkt.types";
 
 const INITIAL_STATE = {
   coll: null,
-  isFaching: false,
+  isFaching: true,
   errorMessage: null,
 };
 

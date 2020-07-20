@@ -20,14 +20,26 @@ class HomePage extends React.Component {
     const { collect, loading } = this.props;
     // loading ? console.log("loading") : console.log(collect);
 
-    if (loading) {
-      console.log("loading ");
-    } else {
-      const a = typeof collect;
-      console.log("a=", a, "b=", collect);
-    }
+    // if (loading) {
+    //   console.log("loading ", loading);
+    // } else {
+    //   //   const a = typeof (collect);
+    //   //   collect.map((data) => console.log);
+    //   console.log("a=", collect, "loading=", loading);
+    //   console.log("b=", collect[0]);
+    // }
 
-    return <ShopItem />;
+    return loading ? (
+      <h1>loading</h1>
+    ) : (
+      collect.map((shopItem) => (
+        <ShopItem
+          categoryUrl={shopItem.categoryUrl}
+          title={shopItem.title}
+          key={shopItem._id}
+        />
+      ))
+    );
   }
 }
 
