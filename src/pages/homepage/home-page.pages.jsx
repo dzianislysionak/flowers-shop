@@ -2,6 +2,7 @@ import React from "react";
 import { createStructuredSelector } from "reselect";
 
 import ShopItem from "../../components/shop-item/shop-item.components";
+import Spinner from "../../components/spinner/spinner.components";
 import { fetchCollStartAsync } from "../../redux/product/product.actions";
 import {
   selectColl,
@@ -20,7 +21,7 @@ class HomePage extends React.Component {
     const { collect, loading } = this.props;
 
     return loading ? (
-      <h1>loading</h1>
+      <Spinner />
     ) : (
       <div className="home-page">
         {collect.map((shopItem) => (
