@@ -29,7 +29,11 @@ const Top = ({ setCollection }) => (
     >
       Доставка
     </Link>
-    <Link to="/signin" className="top-element">
+    <Link
+      to="/signin"
+      className="top-element"
+      onClick={() => setCollection({ title: "ВХОД" })}
+    >
       Войти
     </Link>
   </div>

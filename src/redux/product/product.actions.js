@@ -18,7 +18,7 @@ export const fetchCollStartAsync = () => {
   return (dispatch) => {
     dispatch(fetchCollStart());
 
-    fetch("http://localhost:3000/shop")
+    fetch("http://localhost:5000/shop")
       .then((res) => res.json())
       .then((collll) => collll.col[0].collections)
       // .then((a) => a
