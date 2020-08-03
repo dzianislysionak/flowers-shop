@@ -70,7 +70,6 @@ const Register = ({ signUpStart, setCollection }) => {
       >
         вход
       </Link>
-      {/* <h6 className="reg">регистрация</h6> */}
     </div>
   );
 };
