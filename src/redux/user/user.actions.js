@@ -8,7 +8,7 @@ export const signUpStart = () => ({
 
 export const signUpSuccess = (userCredentials) => ({
   type: UserActionTypes.REGISTER_USER_SUCCESS,
-  payload: userCredentials,
+  payload: { userCredentials },
 });
 
 export const signUpFailure = (errorMessage) => ({
@@ -17,37 +17,32 @@ export const signUpFailure = (errorMessage) => ({
 });
 
 export const signUpStartAsync = (userCredentials) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(signUpStart());
     console.log("userCred", userCredentials);
-    fetch("http://localhost:5000/register", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
+    // fetch("http://localhost:5000/register", {
+    //   method: "post",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({
+    //     email: userCredentials.email,
+    //     password: userCredentials.password,
+    //   }),
+    // })
+    //   .then((res) => res.json())
+    //   // .then((userData) => console.log("data", userData))
+    //   .then((userCredentials) => dispatch(signUpSuccess(userCredentials)))
+    //   .catch((errorMessage) => dispatch(signUpFailure(errorMessage)));
+
+    try {
+      const response = await axios.post("http://localhost:5000/register", {
         email: userCredentials.email,
         password: userCredentials.password,
-      }),
-    })
-      .then((res) => res.json())
-      .then((userData) => console.log("data", userData))
-      .then((data) => dispatch(signUpSuccess(data)))
-      .catch((errorMessage) => dispatch(signUpFailure(errorMessage)));
-
-    // axios
-    //   .post("/register", {
-    //     email: "gena",
-    //     password: "asd",
-    //   })
-    //   .then((res) => console.log(res));
-    // console.log(email, password);
-    //     .then(function (response))
-
-    //     fetch("http://localhost:5000/shop")
-    //       .then((res) => res.json())
-    //       .then((collll) => collll.col[0].collections)
-    //       // .then((a) => a
-    //       .then((data) => dispatch(fetchCollSuccess(data)))
-    //       .catch((errorMessage) => dispatch(fetchCollFailure(errorMessage)));
-    //   };
+      });
+      console.log("response", response);
+      const res = await response.data;
+      dispatch(signUpSuccess(res));
+    } catch (errorMessage) {
+      dispatch(signUpFailure(errorMessage));
+    }
   };
 };

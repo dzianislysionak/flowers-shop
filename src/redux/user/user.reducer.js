@@ -19,8 +19,8 @@ const userReducer = (state = INITIAL_STATE, action) => {
         ...state,
         loadingUser: false,
         userCredentials: action.payload,
-        // email: action.payload,
-        // password: action.payload,
+        email: action.payload.userCredentials.email,
+        password: action.payload.userCredentials.password,
       };
     case UserActionTypes.REGISTER_USER_FAILURE:
       return {
