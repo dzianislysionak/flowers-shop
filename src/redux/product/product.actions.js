@@ -15,23 +15,23 @@ export const fetchCollFailure = (errorMessage) => ({
   payload: errorMessage,
 });
 
-export const fetchCollStartAsync = () => {
-  return async (dispatch) => {
-    dispatch(fetchCollStart());
+export const fetchCollStartAsync = () => async (dispatch) => {
+  // return async (dispatch) => {
+  dispatch(fetchCollStart());
 
-    try {
-      const response = await axios.get("http://localhost:5000/shop");
-      // console.log("res", response);
-      const res = await response.data.col[0].collections;
-      dispatch(fetchCollSuccess(res));
-    } catch (errorMessage) {
-      dispatch(fetchCollFailure(errorMessage));
-    }
-    // fetch("http://localhost:5000/shop")
-    // .then((res) => res.json())
-    // .then((collll) => collll.col[0].collections)
-    // // .then((a) => a
-    // .then((data) => dispatch(fetchCollSuccess(data)))
-    // .catch((errorMessage) => dispatch(fetchCollFailure(errorMessage)));
-  };
+  try {
+    const response = await axios.get("http://localhost:5000/shop");
+    // console.log("res", response);
+    const res = await response.data.col[0].collections;
+    dispatch(fetchCollSuccess(res));
+  } catch (errorMessage) {
+    dispatch(fetchCollFailure(errorMessage));
+  }
+  // fetch("http://localhost:5000/shop")
+  // .then((res) => res.json())
+  // .then((collll) => collll.col[0].collections)
+  // // .then((a) => a
+  // .then((data) => dispatch(fetchCollSuccess(data)))
+  // .catch((errorMessage) => dispatch(fetchCollFailure(errorMessage)));
 };
+// };
