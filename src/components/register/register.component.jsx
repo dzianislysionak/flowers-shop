@@ -5,8 +5,9 @@ import { connect } from "react-redux";
 import "./register.styles.scss";
 import FormInput from "../form-input/form-input.component";
 import { setCollection } from "../../redux/shop/shop.actions";
+import { signUpStartAsync } from "../../redux/user/user.actions";
 
-const Register = ({ signUpStart, setCollection }) => {
+const Register = ({ signUpStartAsync, setCollection }) => {
   const [userCredentials, setUserCredentials] = useState({
     email: "",
     password: "",
@@ -23,7 +24,7 @@ const Register = ({ signUpStart, setCollection }) => {
       return;
     }
 
-    signUpStart(email, password);
+    signUpStartAsync(userCredentials);
   };
 
   const handleChange = (event) => {
@@ -76,6 +77,10 @@ const Register = ({ signUpStart, setCollection }) => {
 
 const mapDispatchToProps = (dispatch) => ({
   setCollection: (item) => dispatch(setCollection(item)),
+  signUpStartAsync: (userCredentials) => {
+    console.log("1", userCredentials);
+    dispatch(signUpStartAsync(userCredentials));
+  },
 });
 
 export default connect(null, mapDispatchToProps)(Register);
