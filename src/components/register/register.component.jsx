@@ -9,12 +9,13 @@ import { signUpStartAsync } from "../../redux/user/user.actions";
 
 const Register = ({ signUpStartAsync, setCollection }) => {
   const [userCredentials, setUserCredentials] = useState({
+    name: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
 
-  const { email, password, confirmPassword } = userCredentials;
+  const { name, email, password, confirmPassword } = userCredentials;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -37,6 +38,14 @@ const Register = ({ signUpStartAsync, setCollection }) => {
     <div className="sign-up">
       <h3>РЕГИСТРАЦИЯ</h3>
       <form onSubmit={handleSubmit}>
+        <FormInput
+          name="name"
+          type="text"
+          value={name}
+          onChange={handleChange}
+          label="name"
+          required
+        />
         <FormInput
           name="email"
           type="email"

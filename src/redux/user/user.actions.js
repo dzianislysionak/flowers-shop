@@ -37,6 +37,7 @@ export const signUpStartAsync = (userCredentials) => async (dispatch) => {
     const response = await axios.post("http://localhost:5000/register", {
       email: userCredentials.email,
       password: userCredentials.password,
+      name: userCredentials.name,
     });
     console.log("response", response);
     const res = await response.data;
@@ -45,4 +46,3 @@ export const signUpStartAsync = (userCredentials) => async (dispatch) => {
     dispatch(signUpFailure(errorMessage));
   }
 };
-// };
