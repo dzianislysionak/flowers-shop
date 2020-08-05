@@ -1,10 +1,12 @@
 import UserActionTypes from "./user.types";
 
 const INITIAL_STATE = {
-  email: null,
-  password: null,
+  // email: null,
+  // password: null,
   loadingUser: false,
   errorMessage: null,
+  isSignIn: false,
+  userCredentials: null,
 };
 
 const userReducer = (state = INITIAL_STATE, action) => {
@@ -18,9 +20,10 @@ const userReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         loadingUser: false,
+        isSignIn: true,
         userCredentials: action.payload,
-        email: action.payload.userCredentials.email,
-        password: action.payload.userCredentials.password,
+        // email: action.payload.userCredentials.email,
+        // password: action.payload.userCredentials.password,
       };
     case UserActionTypes.REGISTER_USER_FAILURE:
       return {
